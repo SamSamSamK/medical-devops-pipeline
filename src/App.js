@@ -1,5 +1,8 @@
 import './App.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+  createHashRouter,
+  RouterProvider
+} from "react-router-dom";
 
 import Homepage from './components/Homepage';
 import Registration from './components/Registration';
@@ -22,83 +25,29 @@ import CTDashboard from './components/CTDashboard/CTDashboard';
 import CTCustomers from './components/CTDashboard/CTCustomers';
 import CTReviews from './components/CTDashboard/CTReviews';
 
-function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Homepage />,
-    },
-    {
-      path: "/register",
-      element: <Registration />,
-    },
-    {
-      path: "/userregister",
-      element: <UserRegistration />,
-    },
-    {
-      path: "/ctregister",
-      element: <CTRegistration />,
-    },
-    {
-      path: "/userdashboard",
-      element: <UserDashboard />,
-    },
-    {
-      path: "/attendevent",
-      element: <AttendEvent />,
-    },
-    {
-      path: "/createevent",
-      element: <CreateEvent />,
-    },
-    {
-      path: "/hirect",
-      element: <HireCT />,
-    },
-    {
-      path: "/medication",
-      element: <Medication />,
-    },
-    {
-      path: "/myrequests",
-      element: <MyRequests />,
-    },
-    {
-      path: "/userprofile",
-      element: <UserProfile />,
-    },
-    {
-      path: "/timepicker",
-      element: <BasicTimePicker />,
-    },
-    {
-      path: "/ctprofile",
-      element: <CTProfile />,
-    },
-    {
-      path: "/ctrequests",
-      element: <CTRequests />,
-    },
-    {
-      path: "/ctdashboard",
-      element: <CTDashboard />,
-    },
-    {
-      path: "/ctcustomers",
-      element: <CTCustomers />,
-    },
-    {
-      path: "/ctreviews",
-      element: <CTReviews />,
-    },
-  ]);
+// ✅ Define all routes here
+const router = createHashRouter([
+  { path: "/", element: <Homepage /> },
+  { path: "/register", element: <Registration /> },
+  { path: "/userregister", element: <UserRegistration /> },
+  { path: "/ctregister", element: <CTRegistration /> },
+  { path: "/userdashboard", element: <UserDashboard /> },
+  { path: "/attendevent", element: <AttendEvent /> },
+  { path: "/createevent", element: <CreateEvent /> },
+  { path: "/hirect", element: <HireCT /> },
+  { path: "/medication", element: <Medication /> },
+  { path: "/myrequests", element: <MyRequests /> },
+  { path: "/userprofile", element: <UserProfile /> },
+  { path: "/timepicker", element: <BasicTimePicker /> },
+  { path: "/ctprofile", element: <CTProfile /> },
+  { path: "/ctrequests", element: <CTRequests /> },
+  { path: "/ctdashboard", element: <CTDashboard /> },
+  { path: "/ctcustomers", element: <CTCustomers /> },
+  { path: "/ctreviews", element: <CTReviews /> },
+]);
 
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+function App() {
+  return <RouterProvider router={router} />;
 }
 
 export default App;
